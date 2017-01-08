@@ -3,6 +3,7 @@ var app = angular.module('myApp', ['ui.bootstrap']);
 
 
 app.controller('myCtrl', function($scope) {
+  $scope.mChart=1;
   $scope.test="hallo";
   $scope.showInputFields=false;
 
@@ -19,6 +20,17 @@ app.controller('myCtrl', function($scope) {
 
 
   };
+
+  $scope.toggleMCharts = function(){
+    if ($scope.mChart==1){
+      $scope.mChart=2;
+      drawMChart2();
+    } else {
+      $scope.mChart=1;
+      drawMChart();
+    }
+  }
+
 
 
 

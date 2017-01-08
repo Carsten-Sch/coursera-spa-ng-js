@@ -1,0 +1,19 @@
+<html>
+
+<head>
+  <script data-require="angular.js@*" data-semver="1.2.9" src="http://code.angularjs.org/1.2.9/angular.js"></script>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <script src="script.js"></script>
+</head>
+
+<body ng-app='app' ng-controller='main'>
+  <form>
+    <div ng-repeat='(index, name) in choices'>
+      {{name}} <input type='checkbox' ng-model='values[index]' ng-true-value='{{index}}' ng-change='updateValues()' />
+    </div>
+  </form>
+  <h4>Here are the values.</h4>
+  <p ng-repeat='name in values'>{{name}}</p>
+</body>
+
+</html>
