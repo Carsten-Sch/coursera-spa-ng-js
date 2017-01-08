@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The d3 test</title>
+
+    <style>
+        .mytooltip {
+            background-color: #BBBBBB;
+            opacity: alpha(opacity=1);
+        }
+
+        .chart {}
+
+        .main text {
+            font: 10px sans-serif;
+        }
+
+        .axis line,
+        .axis path {
+            shape-rendering: crispEdges;
+            stroke: black;
+            fill: none;
+        }
+        /*
+        circle {
+            fill: steelblue;
+        }*/
+    </style>
+    <script type="text/javascript">
+        "use strict";
+    </script>
+
+    <!-- jQuery library -->
+
+    <script src="jquery/1-11-3-jquery.min.js"></script>
+
+    <!-- D3 library -->
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- angular library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+
+    <script src="libs/ui-bootstrap-tpls-0.7.0.js"></script>
+
+    <script type="text/javascript" src="scatterchart.js"></script>
+    <script type="text/javascript" src="myCtrl.js"></script>
+</head>
+
+<body id="1234" ng-app="myApp" ng-controller="myCtrl">
+
+    <h1 style="font-family:Futura,sans-serif;">MOCK-UP RE</h1>
+    <table>
+        <tr>
+            <td>
+                <h3 style="font-family:Futura,sans-serif;">chart to adjust expectations</h3></td>
+            <td width="100"></td>
+            <td>
+                <h3 style="font-family:Futura,sans-serif;">m-chart</h3></td>
+        </tr>
+        <tr>
+            <td>
+                <div class='content'>
+                    <!-- /the chart goes here -->
+                </div>
+                <div ng-show="showInputFields">
+                    X: <input type="number" ng-model="xValue" value="{{xValue}}" placeholder="Decimal" ng-pattern="/^[0-9]+(\.[0-9]{1,6})?$/" step="0.01"></input><br> Y:
+                    <input type="number" ng-model="yValue" value="{{yValue}}" placeholder="Decimal" ng-pattern="/^[0-9]+(\.[0-9]{1,6})?$/" step="0.01"></input><br> R:
+                    <input type="number" ng-model="rValue" value="{{rValue}}" placeholder="Decimal" ng-pattern="/^[0-9]+(\.[0-9]{1,6})?$/"
+                        step="0.01"></input><br>
+                        <button type="button" ng-click="showInputFields=!showInputFields;digest();saveSelectedValues(xValue,yValue,rValue);" name="button">save</button>
+                </div>
+            </td>
+            <td width="100"></td>
+            <td>
+                <div class='content2'>
+                    <!-- /the chart goes here -->
+                </div><button type="button" ng-click="toggleMChart();" name="button">toggle axis</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <script type="text/javascript" src="scatterchart.js"></script>
+</body>
+
+</html>
